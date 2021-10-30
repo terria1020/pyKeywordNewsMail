@@ -1,5 +1,6 @@
 
 from sys import argv
+import getpass
 import yaml
 
 help = '''
@@ -23,7 +24,24 @@ def main():
             exit(1)
 
 def yamlbuilder():
-    pass
+    host = input("smtp 서버의 정보를 입력해주세요(예시: smtp.sample.com): ")
+    port = int(input("smtp 서버의 포트를 입력해주세요(예시: 587): "))
+    id = input("호스트의 smtp 서버 로그인 아이디를 입력해주세요: ")
+    pw = getpass.getpass("호스트의 smtp 서버 로그인 비밀번호를 입력해주세요: ")
+
+    yaml_data = {
+        'info': {
+            'host': host,
+            'port': port,
+            'login': {
+                'id': id,
+                'pw': pw
+            }
+        }
+    }
+    with open("host_info.yaml", 'w') as f:
+        yaml.dump(yaml_data, f, sort_keys=False)
+    print(yaml_data)
 
 if __name__ == '__main__':
     main()
