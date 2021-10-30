@@ -4,15 +4,6 @@ from smtplib import SMTP, SMTPAuthenticationError, SMTPConnectError
 from email.mime.text import MIMEText
 from datetime import datetime
 
-yaml_sample = '''
-info:
-    host: smtp.sample.com # <SMTP_SERVER_ADDR_HERE>
-    port: 587 # <SMTP_SERVER_PORT_HERE>
-    login:
-        id: sampleid # <HOST_ID_EDIT_HERE>
-        pw: samplepw # <HOST_PASSWORD_EDIT_HERE>
-'''
-
 class sender:
     @staticmethod
     def send(text: MIMEText, _from: str, _to: str) -> None :
@@ -22,10 +13,7 @@ class sender:
                     exit(1)
                 conf = (dict(yaml.safe_load(f)))['info']
         except FileNotFoundError:
-            print("[!] 호스트 정보를 담은 yaml 파일이 존재하지 않습니다.")
-            print(yaml_sample)
-            print("이 구조로 된 'host_info.yaml을 생성하여 프로젝트의 최상단에 위치할 수 있도록 해 주세요.")
-            print("host와 port에는 smtp 서버 주소를 기입해주시고, id와 pw는 smtp호스트의 로그인 정보를 기입허여 주세요.")
+            print("[!] 호스트 정보를 담은 yaml 파일이 존재하지 않습니다. 프로젝트에 위치한 utils.py를 실행하여 host_info.yaml을 생성하여 주세요.")
             exit(1)
 
         try:

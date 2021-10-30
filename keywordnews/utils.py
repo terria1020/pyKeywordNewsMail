@@ -9,19 +9,20 @@ help = '''
 '''
 
 def main():
-    if len(argv) != 2:
-        print("usage: utils.py <option>")
-        exit(1)
-    else:
-        if argv[1] == "-h" or argv[1] == "help":
-            print(help)
-        if int(argv[1]) == 1:
-            yamlbuilder()
-        elif int(argv[1]) == 2:
-            print("option 2!")
-        else:
-            print("unexpected option! if u see the help, utils.py -h or utils.py help")
-            exit(1)
+    yamlbuilder()
+    # if len(argv) != 2:
+    #     print("usage: utils.py <option>")
+    #     exit(1)
+    # else:
+    #     if argv[1] == "-h" or argv[1] == "help":
+    #         print(help)
+    #     if int(argv[1]) == 1:
+    #         yamlbuilder()
+    #     elif int(argv[1]) == 2:
+    #         print("option 2!")
+    #     else:
+    #         print("unexpected option! if u see the help, utils.py -h or utils.py help")
+    #         exit(1)
 
 def yamlbuilder():
     host = input("smtp 서버의 정보를 입력해주세요(예시: smtp.sample.com): ")
