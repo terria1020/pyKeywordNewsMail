@@ -1,3 +1,3 @@
 # pyKeywordNewsMail
  
-## yaml builder working branch
+## default develop working branch
