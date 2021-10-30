@@ -1,6 +1,6 @@
 import sys
 import yaml
-from smtplib import SMTP, SMTP_SSL, SMTPAuthenticationError, SMTPConnectError
+from smtplib import SMTP, SMTPAuthenticationError, SMTPConnectError
 from email.mime.text import MIMEText
 from datetime import datetime
 
