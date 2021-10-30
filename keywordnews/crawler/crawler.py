@@ -1,9 +1,8 @@
 import re
 from bs4 import BeautifulSoup
 import requests
-import lxml.html
-from lxml.html import *
-from time import sleep
+from time import sleep, time
+from datetime import datetime
 
 class CrawlerManager:
     curr_title = ""
@@ -27,6 +26,8 @@ class CrawlerManager:
                     contents = f"키워드 {self.keyword}에 대한 새로운 기사 글\n기사 제목: {title}\n기사 주소: {link}"
                     return contents
             else:
+                timestamp = datetime.now().strftime('%Y-%M-%D %H:%M:%S')
+                print(f"# {timestamp} # 최상단 뉴스 타이틀: {title}")
                 return None
 
 def main():
@@ -38,4 +39,4 @@ if __name__ == '__main__':
         contents = cwlmgr.get_contents()
         if contents is not None:
             print(contents)
-        sleep(60)
+        sleep(1)

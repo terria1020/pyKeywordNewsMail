@@ -1,7 +1,8 @@
 
 info:
-  host: smtp.naver.com # <SMTP_SERVER_ADDR_HERE>
+  host: smtp.sample.com # <SMTP_SERVER_ADDR_HERE>
   port: 587 # <SMTP_SERVER_PORT_HERE>
+  mailsource: sample@sample.com # <SMTP_HOST_EMAIL_HERE>
   login:
     id: sampleid # <HOST_ID_EDIT_HERE>
     pw: samplepw # <HOST_PASSWORD_EDIT_HERE>

@@ -27,6 +27,7 @@ def main():
 def yamlbuilder():
     host = input("smtp 서버의 정보를 입력해주세요(예시: smtp.sample.com): ")
     port = int(input("smtp 서버의 포트를 입력해주세요(예시: 587): "))
+    mailsource = input("smtp 사용을 허용한 호스트의 이메일 주소를 입력해주세요(예시: sample@sample.com): ")
     id = input("호스트의 smtp 서버 로그인 아이디를 입력해주세요: ")
     pw = getpass.getpass("호스트의 smtp 서버 로그인 비밀번호를 입력해주세요: ")
 
@@ -34,6 +35,7 @@ def yamlbuilder():
         'info': {
             'host': host,
             'port': port,
+            'mailsource': mailsource,
             'login': {
                 'id': id,
                 'pw': pw
